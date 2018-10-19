@@ -1,0 +1,22 @@
+<div class="welcome-container" [ngClass]="{'mobile': isMobile}">
+  <div class="blurb-container">
+    <h1>Predict Football games Daily. It's free.</h1>
+    <ul>
+      <li>Choose your teams</li>
+      <li>Earn Points</li>
+      <li>Climb the leaderboard</li>
+      <li>Unlock Prizes</li>
+      <li>Play against friends</li>
+    </ul>
+  </div>
+  <div class="phone-container" *ngIf="!isMobile">
+    <img src="../../../assets/img/screenshot.png" />
+  </div>
+  <div class="leaderboard-container">
+
+  </div>
+  <div class="download-image">
+    <img (click)="openiOS()" src="../../../assets/img/badge-app-store.svg" *ngIf="device === 'ios'" />
+    <img (click)="openAndroid()" src="../../../assets/img/badge-google-play.svg" *ngIf="device === 'android'" />
+  </div>
+</div>

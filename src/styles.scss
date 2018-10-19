@@ -1,0 +1,117 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+
+  //background: #f61b49;
+  background: white;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; /* Webkit */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE 10  */
+
+  /* Currently not supported in Opera but will be soon */
+  -o-user-select: none;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica Neue, Helvetica, Verdana, sans-serif;
+}
+
+// Fuck the outline
+*:focus {
+  outline: 0;
+}
+
+.page {
+  padding: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #000;
+}
+
+@media only screen and (max-width: 669px) {
+  background: white;
+  .page {
+    position: relative;
+    max-width: calc(100% - 64px);
+    background: white;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+
+h1:first-child {
+  margin-top: 0;
+}
+
+p {
+  font-size: 14px;
+  margin: 0 0 8.5px;
+}
+
+h1 {
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 16px;
+  margin-top: 24px;
+}
+
+blockquote {
+  font-size: 14px;
+  padding: 5px 17px;
+  border-left: 5px solid #179cde;
+  margin: 0 0 16px;
+  font-style: italic;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    padding: 8px 4px;
+    i {
+      padding-right: 8px;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.italic {
+  font-style: italic;
+}
+
+.half-opacity {
+  opacity: 0.5;
+}
+
+// Stop bouncing
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  overflow: auto;
+}

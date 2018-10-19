@@ -1,0 +1,26 @@
+<div class="footer" id="footer" [ngClass]="{'mobile': isMobile}">
+  <div class="links-container">
+    <div class="link" [routerLink]="['/how-to-play']">
+      How to play
+    </div>
+    <div class="link" [routerLink]="['/privacy-policy']">
+      Privacy policy
+    </div>
+    <div class="link" (click)="openLink('mailto:hoopbot@gmail.com', false)" *ngIf="!isMobile">
+      Contact
+    </div>
+    <div class="separator"></div>
+    <div class="link app" (click)="openLink('https://play.google.com/store/apps/details?id=neverland.hoopbot')">
+      <img src="../../../assets/img/badge-google-play.svg" />
+    </div>
+    <div class="link app" (click)="openLink('https://itunes.apple.com/us/app/hoopbot/id1313728649')">
+      <img src="../../../assets/img/badge-app-store.svg" />
+    </div>
+    <div class="social" *ngIf="isMobile">
+      <i class="fa fa-envelope-o" (click)="openLink('mailto:hoopbot@gmail.com', false)"></i>
+    </div>
+    <div class="social" *ngIf="isMobile">
+      <i class="fa fa-instagram" (click)="openLink('https://www.instagram.com/footybot_official/')"></i>
+    </div>
+  </div>
+</div>

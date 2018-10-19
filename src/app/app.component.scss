@@ -1,0 +1,59 @@
+.content {
+  color: white;
+  min-height: calc(100% - 200px);
+}
+
+#burger {
+  z-index: 2;
+  position: fixed;
+  top:8px;
+  right: 8px;
+  width: 50px;
+  height: 50px;
+  span {
+    width: calc(100% - 15px);
+    height: 7.5px;
+    background: white;
+    position: absolute;
+    top: calc(50% - 3.75px);
+    left: 7.5px;
+    border-radius: 2px;
+    transition: background .15s .15s ease;
+  }
+  span::before {
+    content: "";
+    position: inherit;
+    background: white;
+    height: inherit;
+    width: 100%;
+    border-radius: inherit;
+    top: -13px;
+    transition: transform 250ms ease,top 250ms 250ms ease;
+  }
+  span::after {
+    content: "";
+    position: inherit;
+    background: white;
+    height: inherit;
+    width: 100%;
+    border-radius: inherit;
+    top: 13px;
+    transition: transform 250ms ease,top 250ms 250ms ease;
+  }
+}
+
+#burger.open {
+  span {
+    background: transparent;
+  }
+  span::before {
+    top: 0;
+    transform: rotate(45deg);
+    transition: top 250ms ease,transform 250ms 250ms ease;
+  }
+  span::after {
+    top: 0;
+    transform: rotate(-45deg);
+    transition: top 250ms ease,transform 250ms 250ms ease;
+  }
+}

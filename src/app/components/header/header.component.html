@@ -1,0 +1,20 @@
+<div class="header" [ngClass]="{'mobile': isMobile}">
+  <div class="links-container">
+    <div class="hoopbot-logo" [routerLink]="['/']">
+      <img src="../../../assets/img/header-logo-01.svg" />
+    </div>
+    <div class="separator"></div>
+    <div class="link" (click)="openLink('https://www.instagram.com/footybot_official/')">
+      <i class="fa fa-instagram" aria-hidden="true"></i>
+    </div>
+    <!--<div class="link" (click)="openLink('https://www.youtube.com/user/Hoopbot')">-->
+      <!--<i class="fa fa-youtube-play" aria-hidden="true"></i>-->
+    <!--</div>-->
+    <!--<div class="link" (click)="openLink('https://www.twitter.com/hoopbot/')">-->
+      <!--<i class="fa fa-twitter" aria-hidden="true"></i>-->
+    <!--</div>-->
+    <!--<div class="link" (click)="openLink('https://www.facebook.com/hoopbot/')">-->
+      <!--<i class="fa fa-facebook" aria-hidden="true"></i>-->
+    <!--</div>-->
+  </div>
+</div>

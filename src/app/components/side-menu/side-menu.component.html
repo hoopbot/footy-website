@@ -1,0 +1,21 @@
+<div class="side-menu" [ngClass]="{'open': open}">
+  <!-- Logo, title and subtitle -->
+  <div (click)="toggleSideMenu()" class="flex-item logo" routerLink="/">
+    <img src="../../../assets/img/logo.svg" />
+  </div>
+
+  <!-- Button -->
+  <div (click)="toggleSideMenu()" class="flex-item button how-to-play" routerLink="/how-to-play" routerLinkActive="active">
+    <span>how to play</span>
+  </div>
+
+  <!-- Button -->
+  <div (click)="toggleSideMenu()" class="flex-item button privacy-policy" routerLink="/privacy-policy" routerLinkActive="active">
+    <span>privacy policy</span>
+  </div>
+
+  <!-- Button -->
+  <div (click)="toggleSideMenu()" class="flex-item button contact-us" routerLink="/about-us" routerLinkActive="active">
+    <span>about us</span>
+  </div>
+</div>

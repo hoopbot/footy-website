@@ -1,0 +1,54 @@
+.footer {
+  $footer-height: 80px;
+  position: relative;
+  height: $footer-height;
+  line-height: $footer-height;
+  background: #21242b;
+  color: white;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  .links-container {
+    padding: 0 16px 0 16px;
+    margin: 0 auto;
+    display: flex;
+    font-size: 14px;
+    &:hover {
+      cursor: pointer;
+    }
+    .separator {
+      flex: 1 1 auto;
+    }
+    .link {
+      padding: 0 16px;
+      text-align: center;
+      height: $footer-height;
+      overflow: hidden;
+      img {
+        height: 50px;
+        padding: 15px 0;
+      }
+    }
+    .link.app {
+      padding: 0 8px;
+    }
+  }
+}
+
+.footer.mobile {
+  height: inherit;
+  .links-container {
+    padding-left: 0;
+    .link {
+      flex: 1 1 auto;
+      padding: 0;
+    }
+    .link.app {
+      display: none;
+    }
+    .social {
+      flex: 0 0 50px;
+      font-size: 28px;
+    }
+  }
+}

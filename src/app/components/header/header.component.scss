@@ -1,0 +1,50 @@
+.header {
+  height: 80px;
+  line-height: 40px;
+  padding-top: 40px;
+  color: white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #21242b;
+  .links-container {
+    padding: 0 64px;
+    margin: 0 auto;
+    display: flex;
+    font-size: 14px;
+    .separator {
+      flex: 1 1 auto;
+    }
+    .link {
+      flex: 0 0 60px;
+      font-size: 28px;
+      i {
+        transition: .25s;
+      }
+      &:hover {
+        cursor: pointer;
+        i {
+          transform: translate3d(0,-8px,0);
+        }
+      }
+    }
+    .hoopbot-logo {
+      flex: 0 0 120px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.header.mobile {
+  height: 68px;
+  .links-container {
+    .link {
+      display: none;
+    }
+    .separator {
+      display: none;
+    }
+  }
+}
