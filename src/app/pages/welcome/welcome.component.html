@@ -10,13 +10,32 @@
     </ul>
   </div>
   <div class="phone-container" *ngIf="!isMobile">
-    <img src="../../../assets/img/screenshot.png" />
+    <img src="../../../assets/img/screenshot.png"/>
   </div>
-  <div class="leaderboard-container">
-
+  <div class="leaderboard">
+    <h3>World Ranking</h3>
+    <div class="leaderboard-container">
+      <table>
+        <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Username</th>
+          <th>Score</th>
+        </tr>
+        </thead>
+        <tr class="user-row" *ngFor="let user of leaderboard | async">
+          <td class="rank" [innerHTML]="user.rank"></td>
+          <td class="username-column">
+            <app-hero [heroId]="user.heroId"></app-hero>
+            <div class="username"><img class="crown" *ngIf="user.rank === 1" src="../../../assets/img/crown.svg"> {{user.username}}</div>
+          </td>
+          <td>{{user.score | number : '1.1-2'}}</td>
+        </tr>
+      </table>
+    </div>
   </div>
   <div class="download-image">
-    <img (click)="openiOS()" src="../../../assets/img/badge-app-store.svg" *ngIf="device === 'ios'" />
-    <img (click)="openAndroid()" src="../../../assets/img/badge-google-play.svg" *ngIf="device === 'android'" />
+    <img (click)="openiOS()" src="../../../assets/img/badge-app-store.svg" *ngIf="device === 'ios'"/>
+    <img (click)="openAndroid()" src="../../../assets/img/badge-google-play.svg" *ngIf="device === 'android'"/>
   </div>
 </div>

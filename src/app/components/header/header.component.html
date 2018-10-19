@@ -3,6 +3,13 @@
     <div class="hoopbot-logo" [routerLink]="['/']">
       <img src="../../../assets/img/header-logo-01.svg" />
     </div>
+
+    <div class="separator"></div>
+
+    <div class="player-count">
+      <i class="fa fa-user" aria-hidden="true"></i>{{(leaderboard | async)?.length}}
+    </div>
+
     <div class="separator"></div>
     <div class="link" (click)="openLink('https://www.instagram.com/footybot_official/')">
       <i class="fa fa-instagram" aria-hidden="true"></i>

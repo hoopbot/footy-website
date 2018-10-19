@@ -1,5 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {DeviceService} from "../../services/device/device.service";
+import {AngularFirestore} from "@angular/fire/firestore";
+import {Observable} from "rxjs/Rx";
 
 @Component({
   selector: 'app-header',
@@ -16,10 +18,17 @@ export class HeaderComponent implements OnInit {
   public isMobile = false;
 
   /**
+   * @property leaderboard
+   * @public
+   */
+  public leaderboard: Observable<any[]>;
+
+  /**
    * Constructor
    * @param {DeviceService} _device
    */
-  constructor(@Inject(DeviceService) private _device: DeviceService) {
+  constructor(@Inject(DeviceService) private _device: DeviceService, db: AngularFirestore) {
+    this.leaderboard = db.collection('global-leaderboard').valueChanges();
   }
 
   ngOnInit() {

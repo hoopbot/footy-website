@@ -1,5 +1,8 @@
 import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
 import {DeviceService} from '../../services/device/device.service';
+import { AngularFirestore } from '@angular/fire/firestore';
+import {Observable} from "rxjs/Observable";
+
 
 @Component({
   selector: 'app-welcome',
@@ -23,11 +26,18 @@ export class WelcomeComponent implements OnInit, OnDestroy {
   public device = 'unkown';
 
   /**
-   * Constructor
-   * @param {DeviceService} _device
+   * @property leaderboard
    * @public
    */
-  constructor(@Inject(DeviceService) private _device: DeviceService) {
+  public leaderboard: Observable<any[]>;
+
+  /**
+   * @constructor
+   * @param {DeviceService} _device
+   * @param {AngularFirestore} db
+   */
+  constructor(@Inject(DeviceService) private _device: DeviceService, db: AngularFirestore) {
+    this.leaderboard = db.collection('global-leaderboard', ref => ref.orderBy('rank')).valueChanges();
   }
 
   ngOnInit() {

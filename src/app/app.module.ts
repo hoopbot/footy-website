@@ -27,6 +27,12 @@ import {ToggleSideMenuService} from './services/toggle-side-menu/toggle-side-men
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import {DeviceService} from "./services/device/device.service";
+import {AngularFireModule} from "@angular/fire";
+import {environment} from "../environments/environment";
+import {AngularFirestoreModule} from "@angular/fire/firestore";
+import {PipesModule} from "./pipes/pipes.module";
+import {AngularFireStorageModule} from "@angular/fire/storage";
+import { HeroComponent } from './components/hero/hero.component';
 
 /**
  * App routes
@@ -51,11 +57,16 @@ const appRoutes: Routes = [
     AboutUsComponent,
     DownloadComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    PipesModule
   ],
   providers: [
     ToggleSideMenuService,
