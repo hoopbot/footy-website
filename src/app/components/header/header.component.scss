@@ -47,13 +47,26 @@
 }
 
 .header.mobile {
-  height: 68px;
+  height: 50px;
+  padding-top: 20px;
   .links-container {
+    padding:0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     .link {
       display: none;
     }
     .separator {
       display: none;
+    }
+  }
+
+  .hoopbot-logo{
+    display: flex;
+    align-items: center;
+    img{
+      width: 100px
     }
   }
 }

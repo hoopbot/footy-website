@@ -110,9 +110,13 @@
 
 .welcome-container.mobile {
   margin-top: 0;
+  display: block;
   .blurb-container {
     width: calc(100% - 64px);
     position: relative;
     left: 0;
+  }
+  .leaderboard{
+    display: none
   }
 }
