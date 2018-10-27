@@ -53,7 +53,7 @@ export class WelcomeComponent implements OnInit, OnDestroy {
    * @public
    */
   public openAndroid() {
-    window.open('https://play.google.com/store/apps/details?id=neverland.hoopbot');
+    window.open('https://play.google.com/store/apps/details?id=gameshero.footy');
   }
 
   /**

@@ -28,7 +28,7 @@ export class DownloadComponent implements OnInit {
     if (agent === 'ios') {
       window.location.href = 'https://itunes.apple.com/us/app/hoopbot/id1313728649';
     } else if (agent === 'android') {
-      window.location.href = 'https://play.google.com/store/apps/details?id=neverland.hoopbot&hl=en';
+      window.location.href = 'https://play.google.com/store/apps/details?id=gameshero.footy';
     } else {
       this._router.navigate(['/']);
     }
